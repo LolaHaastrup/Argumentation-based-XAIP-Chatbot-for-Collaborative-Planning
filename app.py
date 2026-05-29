@@ -1435,7 +1435,7 @@ elif page == "🚧 Scenarios":
         return ""
 
     st.dataframe(
-        df.style.applymap(style_result, subset=["Result"]),
+        df.style.map(style_result, subset=["Result"]),
         use_container_width=True, hide_index=True
     )
 
@@ -1490,7 +1490,7 @@ elif page == "🚧 Scenarios":
     test_df = pd.DataFrame(test_table)
     total_pass = sum(1 for row in test_table if "PASS" in row["Result"])
     st.dataframe(
-        test_df.style.applymap(style_result, subset=["Result"]),
+        test_df.style.map(style_result, subset=["Result"]),
         use_container_width=True, hide_index=True)
     st.markdown(f"**{total_pass}/13 competency question tests pass.**")
 
@@ -1541,7 +1541,7 @@ elif page == "📊 AF & Verdict":
             return "color: #6c757d"
 
         st.dataframe(
-            df_cq.style.applymap(style_outcome, subset=["Outcome"]),
+            df_cq.style.map(style_outcome, subset=["Outcome"]),
             use_container_width=True, hide_index=True
         )
 
