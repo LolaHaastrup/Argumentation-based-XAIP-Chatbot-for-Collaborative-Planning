@@ -1474,7 +1474,7 @@ elif page == "🚧 Scenarios":
     ]
     nominal_r = st.session_state.pipeline_cache["A — Nominal"]
     test_table = []
-    for test_id, desc, _ in cq_tests:
+    for test_id, desc in cq_tests:
         idx = int(test_id.split("-")[1]) - 1
         passed = cq_rows[idx]
         test_table.append({"Test": test_id, "Description": desc,
